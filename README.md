@@ -100,9 +100,11 @@ Random irregular masks are obtained from the [NVIDIA Irregular Mask Dataset](htt
 
 ### Mold-stain masks
 
-Mold-stain masks are used to simulate mural-specific degradation patterns, including surface contamination, erosion, and local flaking.
+Mold-stain masks are used to simulate irregular damage patterns associated with mural deterioration, including surface contamination, erosion, and local flaking. The experimental mask dataset contains **8,920 binary masks** at a resolution of **256 × 256** pixels. The damage ratios range from **0% to 60%**, divided into six 10-percentage-point intervals.
 
-The synthetic damage ratio used in the paper ranges from **0% to 60%**.
+The masks were generated using a random-walk-based procedure: starting from a zero-valued binary image, iterative directional movements mark selected pixels as damaged (value `1`). During dataset construction, the selection of masks across damage-ratio intervals was controlled to place more samples at intermediate damage levels. The data loader's mask inversion step is described in the [Mask convention](#mask-convention) section below.
+
+**Release status:** The 8,920 mold-stain masks and their generation script have **not yet been uploaded to this repository**. We plan to release the organized masks, generation code, and relevant configuration/statistical information here after preparation and verification are complete. Until that release, they should not be regarded as publicly available through this repository.
 
 ### Real damaged murals
 
@@ -374,7 +376,9 @@ The manuscript includes:
 
 The datasets used in this study include the Dunhuang Mural Dataset, the NVIDIA Irregular Mask Dataset, the MuralDH dataset, and external cultural heritage image datasets containing Thangka, Yongle Palace mural, and Fahai Temple mural images.
 
-Publicly available datasets should be obtained from their original sources. Due to copyright and data-use restrictions associated with cultural heritage images, processed mural images, derived training/test data, and mold-stain masks are not redistributed publicly in this repository. Research data may be made available from the corresponding author upon reasonable request for non-commercial academic research purposes.
+Publicly available third-party datasets should be obtained from their original sources. Due to copyright and data-use restrictions associated with cultural heritage images, processed mural images and derived training/test image data are not redistributed publicly in this repository. Research data may be made available from the corresponding author upon reasonable request for non-commercial academic research purposes.
+
+The **8,920 synthetic mold-stain masks and their generation code are not yet available in the public repository**. These materials are being organized and checked for a planned future release, together with the relevant generation configurations and mask-distribution statistics. This README will be updated with the corresponding files or access instructions once they have been uploaded.
 
 ---
 
@@ -383,6 +387,8 @@ Publicly available datasets should be obtained from their original sources. Due 
 The source code associated with this work is available in this repository:
 
 https://github.com/autumnst/ASCPR-Net1
+
+The existing `image_masks.py` file is an image/mask processing utility; it is **not** the mold-stain mask generation script described in the manuscript. The mold-stain mask generation script has not yet been added and is planned for release after organization and verification.
 
 The current repository is licensed under the **Apache License 2.0**.
 
