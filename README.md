@@ -129,9 +129,3 @@ We thank the authors and contributors of the following open-source repositories 
 ## License
 
 This project is released under the **Apache License 2.0**. See [LICENSE](LICENSE) for details.
-
-## Contact
-
-**Qiaoqiao Li** (Corresponding author)  
-Northwest Minzu University  
-Email: `liqq@xbmu.edu.cn`
